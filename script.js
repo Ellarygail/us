@@ -1,16 +1,36 @@
 // ===== RELATIONSHIP COUNTER =====
 const startDate = new Date('2025-10-21T00:00:00');
+const datingDate = new Date('2026-05-15T00:00:00');
+
 function updateCounter() {
     const now = new Date();
+    
+    // Chatting since
     const diff = now - startDate;
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
     document.getElementById('counter-days').textContent = days;
     document.getElementById('counter-hours').textContent = String(hours).padStart(2, '0');
     document.getElementById('counter-minutes').textContent = String(minutes).padStart(2, '0');
     document.getElementById('counter-seconds').textContent = String(seconds).padStart(2, '0');
+
+    // Dating since
+    const diffDating = Math.max(0, now - datingDate);
+    const datingDays = Math.floor(diffDating / (1000 * 60 * 60 * 24));
+    const datingHours = Math.floor((diffDating % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const datingMinutes = Math.floor((diffDating % (1000 * 60 * 60)) / (1000 * 60));
+    const datingSeconds = Math.floor((diffDating % (1000 * 60)) / 1000);
+    
+    const datingDaysEl = document.getElementById('dating-days');
+    if (datingDaysEl) {
+        datingDaysEl.textContent = datingDays;
+        document.getElementById('dating-hours').textContent = String(datingHours).padStart(2, '0');
+        document.getElementById('dating-minutes').textContent = String(datingMinutes).padStart(2, '0');
+        document.getElementById('dating-seconds').textContent = String(datingSeconds).padStart(2, '0');
+    }
 }
 updateCounter();
 setInterval(updateCounter, 1000);
