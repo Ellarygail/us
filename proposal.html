@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 A Special Question...</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="proposal.css">
+</head>
+<body>
+    <!-- Falling Hearts Container -->
+    <div id="falling-hearts"></div>
+
+    <!-- Main Content -->
+    <div class="proposal-container" id="proposal-container">
+        <div class="proposal-card">
+            <div class="sparkle-container">
+                <span class="sparkle">✨</span>
+                <span class="sparkle">💫</span>
+                <span class="sparkle">✨</span>
+            </div>
+            <div class="proposal-emoji">🥺👉👈</div>
+            <h1 class="proposal-title">Will you be my <span class="highlight">girlfriend</span>?</h1>
+            <p class="proposal-subtitle">I promise to always make you smile 💕</p>
+            <div class="buttons-container">
+                <button class="btn-yes" id="btn-yes">Yes! 💖</button>
+                <button class="btn-no" id="btn-no">No 😢</button>
+            </div>
+            <p class="no-counter" id="no-counter"></p>
+            <div class="wa-message" id="wa-message" style="display: none; margin-top: 20px; animation: fadeIn 0.8s ease;">
+                <p style="font-size: 1.1rem; color: var(--text2); line-height: 1.6; font-weight: 500;">Kalo mau jawab, coba ngomong langsung ke orang yang buat web ini hhe... 🥰</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti Container -->
+    <div id="confetti-container" style="z-index: 100;"></div>
+
+    <script src="proposal.js"></script>
+</body>
+</html>

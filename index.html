@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Me & Her — Our Love Story</title>
+    <meta name="description" content="A beautiful digital journal celebrating our love story">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- Floating Hearts -->
+    <div id="floating-hearts"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">Me & Her</a>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#beginning">Our Story</a></li>
+                <li><a href="#profiles">About Us</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#milestones">Milestones</a></li>
+                <li><a href="#favorites">Favorites</a></li>
+                <li><a href="#letter">Letter</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-bg" style="background-image: url('foto bersama/IMG_1042.JPG')"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle script-font">Two souls, one story</p>
+            <h1 class="hero-title">Me & Her</h1>
+            <p class="hero-tagline">Every love story is beautiful, but ours is my favorite</p>
+
+        </div>
+    </section>
+
+    <!-- Relationship Counter -->
+    <section id="counter">
+        <div class="container">
+            <h2 class="script-font counter-heading">Been chatting since</h2>
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <span class="counter-number" id="counter-days">0</span>
+                    <span class="counter-label">Days</span>
+                </div>
+                <div class="counter-separator">:</div>
+                <div class="counter-item">
+                    <span class="counter-number" id="counter-hours">0</span>
+                    <span class="counter-label">Hours</span>
+                </div>
+                <div class="counter-separator">:</div>
+                <div class="counter-item">
+                    <span class="counter-number" id="counter-minutes">0</span>
+                    <span class="counter-label">Minutes</span>
+                </div>
+                <div class="counter-separator">:</div>
+                <div class="counter-item">
+                    <span class="counter-number" id="counter-seconds">0</span>
+                    <span class="counter-label">Seconds</span>
+                </div>
+            </div>
+            <p class="counter-text">since our story began 💕</p>
+        </div>
+    </section>
+
+    <!-- The Beginning -->
+    <section id="beginning">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Chapter One</span>
+                <h2 class="section-title">The Beginning</h2>
+                <p class="section-description">How our paths crossed and everything changed</p>
+            </div>
+            <div class="beginning-content">
+                <div class="beginning-image reveal-left">
+                    <img src="foto bersama/IMG-20260513-WA0065(1).jpg.jpeg" alt="Our first moment">
+                </div>
+                <div class="beginning-text reveal-right">
+                    <h3 class="script-font">How We Met</h3>
+                    <p>Pertemuan kita mungkin terlihat biasa, tapi bagiku itu adalah awal dari sesuatu yang luar biasa.
+                        Dari obrolan pertama yang canggung, hingga percakapan yang tak pernah ingin berakhir.</p>
+                    <p>Aku tidak tahu pasti kapan perasaan ini mulai tumbuh, yang aku tahu — setiap hari bersamamu
+                        terasa lebih berwarna dari hari sebelumnya.</p>
+                    <div class="beginning-quote">
+                        <span>"Kadang Tuhan tidak mengirimkan seseorang yang sempurna, tapi seseorang yang sempurna
+                            untuk kita."</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profiles -->
+    <section id="profiles">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">About Us</span>
+                <h2 class="section-title">Me & Her</h2>
+                <p class="section-description">Dua orang yang berbeda, tapi saling melengkapi</p>
+            </div>
+            <div class="profiles-grid">
+                <div class="profile-card reveal-left">
+                    <div class="profile-emoji">🤵</div>
+                    <h3 class="profile-name">Me</h3>
+                    <p class="profile-role">The One Who Fell First</p>
+                    <div class="profile-details">
+                        <div class="profile-detail"><span class="detail-icon">🎂</span><span>24 November 2009</span>
+                        </div>
+                        <div class="profile-detail"><span class="detail-icon">🎮</span><span>Gaming & Coding</span>
+                        </div>
+                        <div class="profile-detail"><span class="detail-icon">🎵</span><span>Musik Galau Addict</span>
+                        </div>
+                        <div class="profile-detail"><span class="detail-icon">💻</span><span>Web Developer</span></div>
+                    </div>
+                    <div class="profile-bday-counter">
+                        <h4 class="profile-bday-title">Countdown to Birthday</h4>
+                        <div class="mini-counter-grid" id="countdown-me-container">
+                            <div class="mini-counter-item">
+                                <span class="mini-counter-number" id="me-days">0</span>
+                                <span class="mini-counter-label">Days</span>
+                            </div>
+                            <div class="mini-counter-item">
+                                <span class="mini-counter-number" id="me-hours">0</span>
+                                <span class="mini-counter-label">Hrs</span>
+                            </div>
+                            <div class="mini-counter-item">
+                                <span class="mini-counter-number" id="me-minutes">0</span>
+                                <span class="mini-counter-label">Min</span>
+                            </div>
+                            <div class="mini-counter-item">
+                                <span class="mini-counter-number" id="me-seconds">0</span>
+                                <span class="mini-counter-label">Sec</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-heart">❤️</div>
+                <div class="profile-card reveal-right">
+                    <div class="profile-emoji">👩</div>
+                    <h3 class="profile-name">Her</h3>
+                    <p class="profile-role">The One Who Makes Me Smile</p>
+                    <div class="profile-details">
+                        <div class="profile-detail"><span class="detail-icon">🎂</span><span>15 Januari 2009</span>
+                        </div>
+                        <div class="profile-detail"><span class="detail-icon">📚</span><span>Bookworm</span></div>
+                        <div class="profile-detail"><span class="detail-icon">🍰</span><span>Dessert Lover</span></div>
+                        <div class="profile-detail"><span class="detail-icon">📸</span><span>Photography</span></div>
+                    </div>
+                    <div class="profile-bday-counter">
+                        <h4 class="profile-bday-title">Countdown to Birthday</h4>
+                        <div class="mini-counter-grid" id="countdown-her-container">
+                            <div class="mini-counter-item">
+                                <span class="mini-counter-number" id="her-days">0</span>
+                                <span class="mini-counter-label">Days</span>
+                            </div>
+                            <div class="mini-counter-item">
+                                <span class="mini-counter-number" id="her-hours">0</span>
+                                <span class="mini-counter-label">Hrs</span>
+                            </div>
+                            <div class="mini-counter-item">
+                                <span class="mini-counter-number" id="her-minutes">0</span>
+                                <span class="mini-counter-label">Min</span>
+                            </div>
+                            <div class="mini-counter-item">
+                                <span class="mini-counter-number" id="her-seconds">0</span>
+                                <span class="mini-counter-label">Sec</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Memories</span>
+                <h2 class="section-title">Our Gallery</h2>
+                <p class="section-description">Moments frozen in time, memories that last forever</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item reveal-up" data-caption="Moment berharga kita ✨">
+                    <img src="foto bersama/IMG_1042.JPG" alt="Our moment" loading="lazy">
+                    <div class="gallery-overlay"><span>💕</span></div>
+                </div>
+                <div class="gallery-item reveal-up" data-caption="Selalu ada cerita di setiap foto 📸">
+                    <img src="foto bersama/IMG_1045.JPG" alt="Beautiful memory" loading="lazy">
+                    <div class="gallery-overlay"><span>💕</span></div>
+                </div>
+                <div class="gallery-item reveal-up" data-caption="Kita, dalam bingkai kenangan 💫">
+                    <img src="foto bersama/IMG-20260513-WA0065(1).jpg.jpeg" alt="Sweet memory" loading="lazy">
+                    <div class="gallery-overlay"><span>💕</span></div>
+                </div>
+                <div class="gallery-item reveal-up" data-caption="Setiap momen bersamamu adalah hadiah 🎁">
+                    <img src="foto bersama/IMG-20260513-WA0066(1).jpg.jpeg" alt="Precious moment" loading="lazy">
+                    <div class="gallery-overlay"><span>💕</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <button class="lightbox-prev" id="lightbox-prev">&#10094;</button>
+        <button class="lightbox-next" id="lightbox-next">&#10095;</button>
+        <img src="" alt="" class="lightbox-image" id="lightbox-image">
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+
+    <!-- Milestones -->
+    <section id="milestones">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Timeline</span>
+                <h2 class="section-title">Our Milestones</h2>
+                <p class="section-description">Jejak perjalanan kita bersama</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">21 Oktober 2025</span>
+                        <h3>First Chat 💬</h3>
+                        <p>Pesan pertama yang mengawali segalanya. Dari obrolan sederhana menjadi sesuatu yang berarti.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Oktober 2025</span>
+                        <h3>Getting Closer 🌙</h3>
+                        <p>Obrolan semakin dalam, telepon malam yang tak terasa berjam-jam.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Desember 2025</span>
+                        <h3>First Photo Together 📸</h3>
+                        <p>Momen pertama diabadikan dalam satu frame yang tak terlupakan.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Mei 2026</span>
+                        <h3>This Website 💝</h3>
+                        <p>Website ini kubuat untukmu, karena kamu layak mendapatkan lebih dari sekadar kata-kata biasa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Favorites -->
+    <section id="favorites">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Together</span>
+                <h2 class="section-title">Our Favorites</h2>
+                <p class="section-description">Hal-hal yang kita nikmati bersama</p>
+            </div>
+            <div class="favorites-grid">
+                <div class="favorite-card reveal-up">
+                    <div class="favorite-icon">🎵</div>
+                    <h3>Lagu Favorit</h3>
+                    <p style="margin-bottom: 4px; color: var(--text);"><strong>Me:</strong> Young and Beautiful — Lana Del Rey</p>
+                    <p><strong>Her:</strong> Broken Melodies — NCT Dream</p>
+                    <span class="favorite-tag">Playlist</span>
+                </div>
+                <div class="favorite-card reveal-up">
+                    <div class="favorite-icon">🎬</div>
+                    <h3>Film Favorit</h3>
+                    <p style="margin-bottom: 4px; color: var(--text);"><strong>Me:</strong> Project Hail Mary</p>
+                    <p><strong>Her:</strong> 2125</p>
+                    <span class="favorite-tag">Movie Night</span>
+                </div>
+                <div class="favorite-card reveal-up">
+                    <div class="favorite-icon">🍽️</div>
+                    <h3>Tempat Makan</h3>
+                    <p style="margin-bottom: 4px; color: var(--text);"><strong>Me:</strong> Di mana saja asal enak</p>
+                    <p><strong>Her:</strong> Tempat yang ada dessert-nya</p>
+                    <span class="favorite-tag">Food Date</span>
+                </div>
+                <div class="favorite-card reveal-up">
+                    <div class="favorite-icon">💭</div>
+                    <h3>Quality Time</h3>
+                    <p style="margin-bottom: 4px; color: var(--text);"><strong>Me:</strong> Telepon & ngobrol</p>
+                    <p><strong>Her:</strong> Chat seharian</p>
+                    <span class="favorite-tag">Priceless</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Letter -->
+    <section id="letter">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">From My Heart</span>
+                <h2 class="section-title">A Letter For You</h2>
+            </div>
+            <div class="letter-container reveal-up">
+                <div class="letter-paper">
+                    <p class="letter-greeting script-font">Dear, Her ❤️</p>
+                    <p>Aku bukan orang yang pandai merangkai kata-kata, tapi aku ingin kamu tahu bahwa kehadiranmu dalam
+                        hidupku adalah salah satu hal terbaik yang pernah terjadi.</p>
+                    <p>Terima kasih sudah menjadi alasan aku tersenyum setiap hari. Terima kasih sudah mau mendengarkan
+                        ceritaku, tertawa bersamaku, dan bahkan menangis bersamaku.</p>
+                    <p>Aku tidak tahu apa yang masa depan simpan untuk kita, tapi satu hal yang aku tahu pasti — aku
+                        ingin kamu ada di dalamnya.</p>
+                    <p>Semoga website kecil ini bisa menggambarkan sebagian kecil dari perasaanku yang begitu besar
+                        untukmu.</p>
+                    <p class="letter-closing">With all my love,</p>
+                    <p class="letter-signature script-font">Me 💕</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secret Message -->
+    <section id="secret">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">🔒 Locked</span>
+                <h2 class="section-title">Secret Message</h2>
+                <p class="section-description">Masukkan tanggal spesial kita untuk membuka pesan rahasia</p>
+            </div>
+            <div class="secret-box reveal-up">
+                <input type="text" id="secret-input" class="secret-input"
+                    placeholder="Masukkan password (cth: 21102025)">
+                <button id="secret-btn" class="secret-btn">🔓 Unlock</button>
+                <div class="secret-message" id="secret-message">
+                    <p class="script-font">Kamu berhasil membukanya! 🎉</p>
+                    <p>Ini artinya kamu mengingat tanggal spesial kita. Aku sangat beruntung memilikimu. Kamu adalah
+                        seseorang yang membuatku percaya bahwa hal-hal indah memang ada di dunia ini. Aku sayang kamu.
+                        💕</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Surprise Button -->
+    <section id="surprise">
+        <div class="container">
+            <div class="surprise-content reveal-up">
+                <p class="script-font surprise-text">Masih ada satu hal lagi...</p>
+                <a href="proposal.html" class="surprise-btn" id="surprise-btn">
+                    <span>💌</span>
+                    <span>Buka Kejutan</span>
+                    <span>💌</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with ❤️ for the one I love</p>
+        <p class="script-font">Me & Her — 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
