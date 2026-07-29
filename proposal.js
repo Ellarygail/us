@@ -3,6 +3,7 @@ const heartsContainer = document.getElementById('falling-hearts');
 const heartEmojis = ['💕', '💗', '💖', '💘', '❤️', '🩷', '💝', '🌸', '✨', '💫'];
 
 function createFallingHeart() {
+    if (!heartsContainer || heartsContainer.children.length > 25) return;
     const heart = document.createElement('span');
     heart.className = 'falling-heart';
     heart.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
