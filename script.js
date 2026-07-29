@@ -98,11 +98,24 @@ window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 80);
 });
 
-// ===== MOBILE NAV TOGGLE =====
+// ===== MOBILE NAV TOGGLE & OUTSIDE CLICK =====
 const navToggle = document.getElementById('nav-toggle');
 const navLinks = document.getElementById('nav-links');
-navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
-navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('active')));
+navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    navToggle.classList.remove('active');
+}));
+document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('active') && !navbar.contains(e.target)) {
+        navLinks.classList.remove('active');
+        navToggle.classList.remove('active');
+    }
+});
 
 // ===== SCROLL REVEAL =====
 const revealElements = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up');
@@ -120,6 +133,7 @@ revealElements.forEach(el => revealObserver.observe(el));
 const heartsContainer = document.getElementById('floating-hearts');
 const heartEmojis = ['💕', '💗', '💖', '💘', '❤️', '🩷', '✨'];
 function createHeart() {
+    if (!heartsContainer || heartsContainer.children.length > 20) return;
     const heart = document.createElement('span');
     heart.className = 'floating-heart';
     heart.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
@@ -179,19 +193,43 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % images.length; openLightbox(); }
 });
 
+// Mobile Touch Swipe for Lightbox
+let touchStartX = 0;
+let touchEndX = 0;
+lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+lightbox.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchEndX < touchStartX - 40) {
+        currentIndex = (currentIndex + 1) % images.length;
+        openLightbox();
+    } else if (touchEndX > touchStartX + 40) {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        openLightbox();
+    }
+}, { passive: true });
+
 // ===== SECRET MESSAGE =====
-document.getElementById('secret-btn').addEventListener('click', () => {
-    const input = document.getElementById('secret-input').value.trim();
+const secretBtn = document.getElementById('secret-btn');
+const secretInput = document.getElementById('secret-input');
+function unlockSecret() {
+    const input = secretInput.value.trim();
     const msg = document.getElementById('secret-message');
     if (input === '21102025' || input === '21-10-2025') {
         msg.classList.add('show');
     } else {
-        const inp = document.getElementById('secret-input');
-        inp.style.borderColor = '#e91e63';
-        inp.style.animation = 'shake 0.4s ease';
-        setTimeout(() => { inp.style.borderColor = ''; inp.style.animation = ''; }, 500);
+        secretInput.style.borderColor = '#e91e63';
+        secretInput.style.animation = 'shake 0.4s ease';
+        setTimeout(() => { secretInput.style.borderColor = ''; secretInput.style.animation = ''; }, 500);
     }
-});
+}
+if (secretBtn && secretInput) {
+    secretBtn.addEventListener('click', unlockSecret);
+    secretInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') unlockSecret();
+    });
+}
 
 // ===== SMOOTH SCROLL FOR NAV LINKS =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -210,31 +248,33 @@ window.addEventListener('scroll', () => {
         heroContent.style.transform = `translateY(${scroll * 0.3}px)`;
         heroContent.style.opacity = 1 - (scroll / 600);
     }
-});
+}, { passive: true });
 
-// ===== 3D TILT EFFECT =====
-const tiltCards = document.querySelectorAll('.profile-card, .favorite-card');
-tiltCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
+// ===== 3D TILT EFFECT (Desktop Only) =====
+if (window.matchMedia("(pointer: fine)").matches) {
+    const tiltCards = document.querySelectorAll('.profile-card, .favorite-card');
+    tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
 
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
 
-        const rotateX = ((y - centerY) / centerY) * -8; // Max 8 deg
-        const rotateY = ((x - centerX) / centerX) * 8;
+            const rotateX = ((y - centerY) / centerY) * -8;
+            const rotateY = ((x - centerX) / centerX) * 8;
 
-        card.style.setProperty('--rx', `${rotateX}deg`);
-        card.style.setProperty('--ry', `${rotateY}deg`);
+            card.style.setProperty('--rx', `${rotateX}deg`);
+            card.style.setProperty('--ry', `${rotateY}deg`);
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.setProperty('--rx', '0deg');
+            card.style.setProperty('--ry', '0deg');
+        });
     });
-
-    card.addEventListener('mouseleave', () => {
-        card.style.setProperty('--rx', '0deg');
-        card.style.setProperty('--ry', '0deg');
-    });
-});
+}
 
 // ===== CUSTOM CURSOR =====
 const cursorDot = document.getElementById('cursor-dot');
@@ -247,7 +287,6 @@ if (cursorDot && cursorOutline && window.matchMedia("(pointer: fine)").matches) 
         cursorDot.style.left = `${posX}px`;
         cursorDot.style.top = `${posY}px`;
 
-        // Use animate for smooth trailing effect
         cursorOutline.animate({
             left: `${posX}px`,
             top: `${posY}px`
