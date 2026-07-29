@@ -5,12 +5,18 @@
     --border: 3px solid #1a1a1a; --shadow: 6px 6px 0px #1a1a1a; --shadow-lg: 8px 8px 0px #1a1a1a;
     --sans: 'Space Grotesk', sans-serif; --script: 'Caveat', cursive; --mono: 'Space Mono', monospace;
 }
-html, body { height: 100%; overflow: hidden; }
+html, body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
 body {
     font-family: var(--sans); background: var(--bg);
     background-image: radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px);
     background-size: 20px 20px;
     display: flex; align-items: center; justify-content: center;
+    padding: 20px 12px;
 }
 .script-font { font-family: var(--script); }
 
@@ -23,10 +29,11 @@ body {
 }
 
 /* Proposal Container */
-.proposal-container { position: relative; z-index: 10; width: 100%; max-width: 520px; padding: 20px; }
+.proposal-container { position: relative; z-index: 10; width: 100%; max-width: 520px; padding: 10px; }
 .proposal-card {
     background: var(--card); border: var(--border); box-shadow: var(--shadow-lg);
     padding: 48px 40px; text-align: center; position: relative; animation: none;
+    width: 100%;
 }
 .sparkle-container { display: flex; justify-content: center; gap: 16px; margin-bottom: 16px; }
 .sparkle { font-size: 1.5rem; animation: twinkle 1.5s ease-in-out infinite; }
@@ -97,6 +104,8 @@ body {
 @keyframes dance { from { transform: translateX(-5px); } to { transform: translateX(5px); } }
 
 @media (max-width: 480px) {
-    .proposal-card { padding: 36px 24px; margin: 12px; }
-    .buttons-container { flex-direction: column; gap: 12px; }
+    .proposal-card { padding: 28px 18px; margin: 0; }
+    .proposal-title { font-size: clamp(1.4rem, 6vw, 1.8rem); }
+    .buttons-container { flex-direction: column; gap: 12px; width: 100%; }
+    .btn-yes, .btn-no { width: 100%; text-align: center; }
 }
