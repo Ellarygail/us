@@ -147,8 +147,8 @@ function createHeart() {
 setInterval(createHeart, 2000);
 for (let i = 0; i < 5; i++) setTimeout(createHeart, i * 400);
 
-// ===== GALLERY LIGHTBOX =====
-const galleryItems = document.querySelectorAll('.gallery-item');
+// ===== GALLERY & PLACES LIGHTBOX =====
+const galleryItems = document.querySelectorAll('.gallery-item, .place-card');
 const lightbox = document.getElementById('lightbox');
 const lightboxImage = document.getElementById('lightbox-image');
 const lightboxCaption = document.getElementById('lightbox-caption');
@@ -252,7 +252,7 @@ window.addEventListener('scroll', () => {
 
 // ===== 3D TILT EFFECT (Desktop Only) =====
 if (window.matchMedia("(pointer: fine)").matches) {
-    const tiltCards = document.querySelectorAll('.profile-card, .favorite-card');
+    const tiltCards = document.querySelectorAll('.profile-card, .favorite-card, .place-card');
     tiltCards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
@@ -293,7 +293,7 @@ if (cursorDot && cursorOutline && window.matchMedia("(pointer: fine)").matches) 
         }, { duration: 400, fill: "forwards" });
     });
 
-    const interactiveElements = document.querySelectorAll('a, button, input, .gallery-item, .profile-card, .favorite-card');
+    const interactiveElements = document.querySelectorAll('a, button, input, .gallery-item, .profile-card, .favorite-card, .place-card');
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
         el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
